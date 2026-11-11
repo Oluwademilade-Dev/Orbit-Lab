@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101513" />
+    <title>Orbit Lab - Sorting playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Orbit Lab home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>ORBIT<span class="brand-muted">/LAB</span></span>
+        </a>
+        <div class="topbar-note"><span class="status-dot"></span> VISUAL LEARNING STUDIO</div>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">ALGORITHM 01 / SORTING</p>
+        <h1>Watch order<br /><em>take shape.</em></h1>
+        <p class="intro-copy">A small laboratory for seeing how algorithms think. Choose a method, change the input, and move through every comparison.</p>
+      </section>
+
+      <section class="workspace" aria-label="Sorting visualizer">
+        <div class="visualizer-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">LIVE ARRAY</p>
+              <h2 id="arrayLabel">Bubble sort</h2>
+            </div>
+            <div class="metric"><span id="stepCount">0</span><small>STEPS</small></div>
+          </div>
+          <div class="stage" id="stage" aria-label="Array visualization"></div>
+          <div class="stage-footer">
+            <span id="activityLabel">Ready when you are.</span>
+            <span class="array-size"><span id="arraySize">16</span> VALUES</span>
+          </div>
+        </div>
+
+        <aside class="control-panel">
+          <div class="control-block">
+            <label for="algorithm">METHOD</label>
+            <select id="algorithm">
+              <option value="bubble">Bubble sort</option>
+              <option value="selection">Selection sort</option>
+              <option value="insertion">Insertion sort</option>
+            </select>
+          </div>
+          <div class="control-block">
+            <div class="label-row"><label for="size">ARRAY SIZE</label><span id="sizeValue">16</span></div>
+            <input id="size" type="range" min="8" max="28" value="16" />
+          </div>
+          <div class="control-block">
+            <div class="label-row"><label for="speed">PACE</label><span id="speedValue">MEDIUM</span></div>
+            <input id="speed" type="range" min="1" max="3" value="2" />
+          </div>
+          <div class="actions">
+            <button class="button button-primary" id="run">Run sort</button>
+            <button class="button button-secondary" id="step">Step forward</button>
+            <button class="button button-quiet" id="shuffle">Shuffle array</button>
+          </div>
+          <div class="hint"><span class="hint-key">TIP</span><span id="hintText">Step through the first comparison to see the algorithm's rhythm.</span></div>
+        </aside>
+      </section>
+
+      <section class="details">
+        <div class="detail-card detail-featured">
+          <p class="eyebrow">HOW IT WORKS</p>
+          <h2 id="detailTitle">Bubble sort</h2>
+          <p id="detailCopy">Bubble sort repeatedly compares neighboring values and swaps them when they are out of order. Larger values slowly rise toward the end of the array.</p>
+          <div class="complexity"><span>TIME</span><strong id="timeComplexity">O(n²)</strong><span>SPACE</span><strong>O(1)</strong></div>
+        </div>
+        <div class="detail-card sequence-card">
+          <p class="eyebrow">READING THE STAGE</p>
+          <div class="legend"><span class="legend-swatch comparing"></span><span>Comparing</span></div>
+          <div class="legend"><span class="legend-swatch sorted"></span><span>In final position</span></div>
+          <div class="legend"><span class="legend-swatch idle"></span><span>Waiting</span></div>
+        </div>
+      </section>
+
+      <footer class="footer"><span>ORBIT/LAB</span><span>BUILD 01.26</span><span>MADE FOR CURIOUS MINDS</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
